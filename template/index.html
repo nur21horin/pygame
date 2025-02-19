@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snakes With Hasina</title>
+</head>
+<body>
+    <h1>Snakes With Hasina</h1>
+    <button id="start-button">Start Game</button>
+    <canvas id="game-canvas" width="600" height="600"></canvas>
+    <script>
+        document.getElementById('start-button').addEventListener('click', function() {
+            // Function to start the game
+            fetch('/start_game').then(response => response.json()).then(data => {
+                console.log(data);
+                // You can add more game interaction here
+            });
+        });
+
+        // Function to update the game canvas
+        function updateCanvas() {
+            const canvas = document.getElementById('game-canvas');
+            const context = canvas.getContext('2d');
+            // Add code to draw the game state
+        }
+
+        // Continuously update the game canvas
+        setInterval(updateCanvas, 1000 / 60); // Update at 60 FPS
+    </script>
+</body>
+</html>
